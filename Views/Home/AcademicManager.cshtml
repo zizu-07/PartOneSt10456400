@@ -1,0 +1,63 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Manager Dashboard</title>
+    <link rel="stylesheet" href="academic-manager-dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h2>Academic Manager Dashboard</h2>
+        <p class="subtitle">Final approval of claims submitted by lecturers and verified by coordinators</p>
+
+        <!-- Claims Table (Auto-populated dynamically) -->
+        <div class="claims-table">
+            <table id="claimsTable">
+                <thead>
+                    <tr>
+                        <th>Lecturer</th>
+                        <th>Claim ID</th>
+                        <th>Total Claim</th>
+                        <th>Status (Coordinator)</th>
+                        <th>Supporting Docs</th>
+                        <th>Final Approval</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Claims will be injected dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="logout">
+            <a href="login.html">Logout</a>
+        </div>
+    </div>
+
+    <script>
+        // Example of fetching claims dynamically (simulating DB/API)
+        const claims = [
+            { lecturer: "Fetched from DB", id: "Auto", total: "Auto", status: "Auto", doc: "Auto" }
+        ];
+
+        const tbody = document.querySelector("#claimsTable tbody");
+        claims.forEach(claim => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${claim.lecturer}</td>
+                <td>${claim.id}</td>
+                <td>${claim.total}</td>
+                <td>${claim.status}</td>
+                <td><a href="#">${claim.doc}</a></td>
+                <td>
+                    <button class="approve">Approve</button>
+                    <button class="reject">Reject</button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
+    </script>
+</body>
+</html>
