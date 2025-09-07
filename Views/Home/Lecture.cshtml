@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturer Claim Form</title>
+    <link rel="stylesheet" href="lecturer-claim-form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <h2>Lecturer Claim Form</h2>
+
+            <form id="claimForm">
+                <div class="form-row">
+                    <!-- Lecturer Name -->
+                    <div class="form-group">
+                        <label for="lecturerName">Lecturer Name</label>
+                        <input type="text" id="lecturerName" name="lecturerName" required>
+                    </div>
+
+                    <!-- Hours Worked -->
+                    <div class="form-group">
+                        <label for="hoursWorked">Hours Worked</label>
+                        <input type="number" id="hoursWorked" name="hoursWorked" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <!-- Hourly Rate -->
+                    <div class="form-group">
+                        <label for="hourlyRate">Hourly Rate (ZAR)</label>
+                        <input type="number" id="hourlyRate" name="hourlyRate" required>
+                    </div>
+                </div>
+
+                <!-- Upload -->
+                <div class="form-group">
+                    <label for="supportingDoc">Supporting Document</label>
+                    <input type="file" id="supportingDoc" name="supportingDoc">
+                </div>
+
+                <!-- Submit -->
+                <div class="form-actions">
+                    <button type="submit">✅ Submit Claim</button>
+                    <p id="claimStatusMessage" class="status-message"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
